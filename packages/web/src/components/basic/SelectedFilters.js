@@ -14,7 +14,7 @@ class SelectedFilters extends Component {
 		const { onClear } = this.props;
 		this.props.setValue(component, null);
 		if (onClear) {
-			onClear(component, value);
+			onClear.call(this.props, component, value);
 		}
 	};
 
@@ -22,7 +22,7 @@ class SelectedFilters extends Component {
 		const { onClear } = this.props;
 		this.props.clearValues();
 		if (onClear) {
-			onClear(null);
+			onClear.call(this.props, null);
 		}
 	};
 
